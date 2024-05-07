@@ -1,0 +1,20 @@
+{
+  "name": "singonline-api-codealong",
+  "version": "1.0.0",
+  "description": "mit forste app",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Webudvikler-TechCollege/SingOnline-API-CodeAlong.git"
+  },
+  "author": "Elena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Webudvikler-TechCollege/SingOnline-API-CodeAlong/issues"
+  },
+  "homepage": "https://github.com/Webudvikler-TechCollege/SingOnline-API-CodeAlong#readme"
+}
