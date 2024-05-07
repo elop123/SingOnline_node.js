@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/elop123/SingOnline_node.js"
   },
-  "homepage": "https://github.com/elop123/SingOnline_node.js/blob/main/README.md"
+  "homepage": "https://github.com/elop123/SingOnline_node.js/blob/main/README.md",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
