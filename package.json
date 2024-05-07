@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Webudvikler-TechCollege/SingOnline-API-CodeAlong.git"
+    "url": "git+https://github.com/elop123/SingOnline_node.js.git"
   },
   "author": "Elena",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Webudvikler-TechCollege/SingOnline-API-CodeAlong/issues"
+    "url": "https://github.com/elop123/SingOnline_node.js"
   },
-  "homepage": "https://github.com/Webudvikler-TechCollege/SingOnline-API-CodeAlong#readme"
+  "homepage": "https://github.com/elop123/SingOnline_node.js/blob/main/README.md"
 }
