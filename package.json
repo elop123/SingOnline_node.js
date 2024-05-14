@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/elop123/SingOnline_node.js/blob/main/README.md",
   "dependencies": {
+    "@supabase/supabase-js": "^2.43.1",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2"
   }
 }
