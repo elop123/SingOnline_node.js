@@ -70,7 +70,16 @@ app.get('/albums', async (req, res)=>{
     }
 })
 
+//Model
+app.get('/songs', async (req, res) => {
+    let songs = await SongModel.getAllRecords();
+    console.log(songs);
+   })
 
+app.get('/artists', async (req, res) => {
+    let artists = await ArtistModel.getAllArtists();
+    console.log(artists);
+  });
 app.listen(3000, ()=>{
     console.log(`Webserver is running now on http://localhost:${port}`);
 })
