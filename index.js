@@ -12,9 +12,9 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import {supabase} from './Config/supabase.config.js';
-import SongModel from './Models/song.model.js'
-import ArtistModel from './Models/artist.model.js'
-import AlbumModel from './Models/albums.model.js'
+import SongModel from './Models/song.model.js';
+import ArtistModel from './Models/artist.model.js';
+import AlbumModel from './Models/albums.model.js';
 import {SongController} from './Controllers/song.controller.js'
 
 
@@ -23,12 +23,35 @@ dotenv.config()
 
 const port = process.env.PORT
 
-app.use(SongController)
-
-app.get('/',(req, res)=>{
+//Express
+app.get('/Forside',(req, res)=>{
     console.log(req.query);
   res.send('Forside')
 })
+
+app.get('/About', (req, res) => {
+    res.send('Hvem er vi');
+})
+
+app.get('/Services', (req, res) => {
+    res.send('Hvad kan vi');
+});
+
+app.get('/Address', (req, res) => {
+    res.send('Find os');
+});
+
+app.get('/Products', (req, res) => {
+    res.send('Produkt liste');
+});
+
+app.get('/Details', (req, res) => {
+    res.send('Produkt detaljer');
+});
+
+app.get('/Contact', (req, res) => {
+    res.send('Kontakt side');
+});
 
 app.post('/', (req, res)=>{
     res.send('Endpoint til POST')
@@ -79,13 +102,16 @@ app.get('/songs', async (req, res) => {
 app.get('/artists', async (req, res) => {
     let artists = await ArtistModel.getAllArtists();
     console.log(artists);
-  });
+  })
 
 app.get('/albums', async (req, res) => {
     let albums = await AlbumModel.getAllAlbums();
     console.log(albums);
-  });
+  })
 
+
+//Controller
+app.use(SongController)
 
 app.listen(3000, ()=>{
     console.log(`Webserver is running now on http://localhost:${port}`);
