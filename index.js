@@ -58,7 +58,7 @@ app.get('/artist', async (req, res)=>{
     }
 })
 
-app.get('/albums', async (req, res)=>{
+app.get('/album', async (req, res)=>{
     const { data, error} = await supabase
     .from ('albums')
     .select('title, image, artist_id(name)')
@@ -80,6 +80,13 @@ app.get('/artists', async (req, res) => {
     let artists = await ArtistModel.getAllArtists();
     console.log(artists);
   });
+
+app.get('/albums', async (req, res) => {
+    let albums = await AlbumModel.getAllAlbums();
+    console.log(albums);
+  });
+
+
 app.listen(3000, ()=>{
     console.log(`Webserver is running now on http://localhost:${port}`);
 })

@@ -1,23 +1,22 @@
-import { supabase } from '../Config/supabase.config.js';
+import { supabase } from '../Config/supabase.config.js'
 
 export default class ArtistModel {
-  static async getAllArtists() {
-    try {
-      const { data, error } = await supabase
-        .from('artists')
-        .select('id, name');
+	static async getAllArtists() {
+		try {
+			const { data, error } = await supabase
+				.from('artists')
+				.select('id, name')
+			if(error) {
+				throw new Error(error)
+			} else {
+				return data
+			}
+		} catch (error) {
+			console.error(`Fejl i kald af artister: ${error}`)
+		}
+	}
 
-      if (error) {
-        throw new Error(error);
-      } else {
-        return data;
-      }
-    } catch (error) {
-      console.log(`Fejl i kald af artists:${error}`);
-    }
-  }
+	static async getArtistById() {
 
-  static async getArtistById() {
-
-  }
+	}
 }

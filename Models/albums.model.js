@@ -5,7 +5,7 @@ export default class AlbumModel {
     try {
         const {data , error} = await supabase
         .from('albums')
-        .select('title')
+        .select('id, title, artist_id(name), release_at')
         if (error){
             throw new Error (error)
         }else{
@@ -15,7 +15,7 @@ export default class AlbumModel {
        console.log(`Fejl i kald af albums:${error}`)
     }
   }
-static async getAllAlbums(){
+static async getAlbumById(){
 
 }
 }
