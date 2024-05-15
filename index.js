@@ -34,10 +34,10 @@ app.post('/', (req, res)=>{
     res.send('Endpoint til POST')
 })
 
-app.get('/test', async (req, res)=>{
+app.get('/song', async (req, res)=>{
     const { data, error} = await supabase
     .from ('songs')
-    .select('title')
+    .select('id, title')
     if (error){
         console.log(error)
     }else{
@@ -49,7 +49,7 @@ app.get('/test', async (req, res)=>{
 app.get('/artist', async (req, res)=>{
     const { data, error} = await supabase
     .from ('artists')
-    .select('id, name')
+    .select('id, name, description, created_at, image')
     if (error){
         console.log(error)
     }else{
@@ -61,7 +61,7 @@ app.get('/artist', async (req, res)=>{
 app.get('/albums', async (req, res)=>{
     const { data, error} = await supabase
     .from ('albums')
-    .select('id, title' )
+    .select('title, image, artist_id(name)')
     if (error){
         console.log(error)
     }else{
