@@ -16,8 +16,8 @@ import SongModel  from './Models/song.model.js';
 import ArtistModel from './Models/artist.model.js';
 import AlbumModel from './Models/album.model.js';
 import {SongController} from './Controllers/song.controller.js'
-// import {ArtistController} from './Controllers/artist.controller.js'
-// import {AlbumController} from './Controllers/album.controller.js'
+import {ArtistController} from './Controllers/artist.controller.js'
+import {AlbumController} from './Controllers/album.controller.js'
 
 const app = express() 
 dotenv.config()
@@ -117,10 +117,8 @@ app.get('/albums', async (req, res) => {
 
 //Controller
 app.use(SongController)
-
-// app.use(ArtistController)
-
-// app.use(AlbumController)
+app.use(ArtistController)
+app.use(AlbumController)
 
 app.listen(3000, ()=>{
     console.log(`Webserver is running now on http://localhost:${port}`);
