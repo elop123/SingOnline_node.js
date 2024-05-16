@@ -10,4 +10,5 @@
 AlbumController.get('/albums/:id', async (req, res) => {
 	const data = await AlbumModel.getAlbumById(req.params.id)
 	res.send(data);
+	console.log(req.params);
 });
