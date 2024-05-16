@@ -19,7 +19,7 @@ static async getAlbumById(id){
   try {
     const { data, error } = await supabase
       .from('albums')
-      .select('id, artists(name)')
+      .select('id, title')
       .eq('id', id)
     if(error) {
       throw new Error(error)
