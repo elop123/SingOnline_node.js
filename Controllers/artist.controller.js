@@ -6,3 +6,9 @@
  	const data = await ArtistModel.getAllArtists()
  	res.send(data)
  });
+
+ ArtistController.get('/artists/:id', async (req, res) => {
+	const data = await ArtistModel.getArtistById(req.params.id)
+	res.send(data);
+  console.log(data);
+});

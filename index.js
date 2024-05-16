@@ -96,23 +96,23 @@ const port = process.env.PORT
 // })
 
 //Model
-app.get('/songs', async (req, res) => {
-    let songs = await SongModel.getAllRecords();
-    res.send(songs);
-    console.log(songs);
-   })
+// app.get('/songs', async (req, res) => {
+//     let songs = await SongModel.getAllRecords();
+//     res.send(songs);
+//     console.log(songs);
+//    })
 
-app.get('/artists', async (req, res) => {
-    let artists = await ArtistModel.getAllArtists();
-    res.send(artists);
-    console.log(artists);
-  })
+// app.get('/artists', async (req, res) => {
+//     let artists = await ArtistModel.getAllArtists();
+//     res.send(artists);
+//     console.log(artists);
+//   })
 
-app.get('/albums', async (req, res) => {
-    let albums = await AlbumModel.getAllAlbums();
-    res.send(albums);
-    console.log(albums);
-  })
+// app.get('/albums', async (req, res) => {
+//     let albums = await AlbumModel.getAllAlbums();
+//     res.send(albums);
+//     console.log(albums);
+//   })
 
 
 //Controller

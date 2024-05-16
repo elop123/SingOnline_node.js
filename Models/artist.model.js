@@ -16,7 +16,23 @@ export default class ArtistModel {
 		}
 	}
 
-	static async getArtistById() {
-
+	static async getArtistById(id) {
+		try {
+			const { data, error } = await supabase
+				.from('artists')
+				.select('id, name')
+				.eq('id', id)
+			if(error) {
+				throw new Error(error)
+			} else {
+				return data
+			}
+		} catch (error) {
+			console.error(`Fejl i kald af artistliste: ${error}`)
+		}
 	}
+
 }
+
+	
+
