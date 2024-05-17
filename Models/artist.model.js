@@ -31,6 +31,27 @@ export default class ArtistModel {
 			console.error(`Fejl i kald af artistliste: ${error}`)
 		}
 	}
+	static async createArtist(formdata) {
+		try {
+			const { data, error } = await supabase
+			.from('artists')
+			.insert([
+				{
+					name: formdata.name,
+					image: formdata.image,
+					description: formdata.description
+				}
+			])
+			if(error) {
+				throw new Error(error)
+			} else {
+				return data
+			}
+
+		 } catch (error) {
+			console.error(`Fejl i oprettelse af artist: ${error}`)
+		}
+	}
 
 }
 

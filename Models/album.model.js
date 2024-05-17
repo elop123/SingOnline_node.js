@@ -30,5 +30,29 @@ static async getAlbumById(id){
     console.error(`Fejl i kald af albumliste: ${error}`)
   }
 }
+static async createAlbum(formdata) {
+  try {
+    const { data, error } = await supabase
+    .from('albums')
+    .insert([
+      {
+        title: formdata.title,
+        description:formdata.description,
+        image:formdata.image,
+        release_date:formdata.release_date,
+        artist_id: formdata.artist_id
+      }
+    ])
+    if(error) {
+      throw new Error(error)
+    } else {
+      return data
+    }
+
+   } catch (error) {
+    console.error(`Fejl i oprettelse af album: ${error}`)
+  }
+}
+
 
 }

@@ -23,6 +23,7 @@ const app = express()
 dotenv.config()
 
 const port = process.env.PORT
+app.use(express.urlencoded({ extended: true }));
 
 // //Express
 

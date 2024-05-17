@@ -12,3 +12,9 @@
 	res.send(data);
   console.log(req.params);
 });
+
+ArtistController.post('/artists', async (req, res) => {
+	const data = await ArtistModel.createArtist(req.body)
+	res.send(data)
+	console.log(req.body);
+ });
