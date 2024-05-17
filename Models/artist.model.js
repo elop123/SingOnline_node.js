@@ -39,7 +39,8 @@ export default class ArtistModel {
 				{
 					name: formdata.name,
 					image: formdata.image,
-					description: formdata.description
+					description: formdata.description,
+					created_at:formdata.created_at
 				}
 			])
 			if(error) {

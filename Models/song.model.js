@@ -40,7 +40,8 @@ export default class SongModel {
 						title: formdata.title,
 						content: formdata.content,
 						lyrics: formdata.lyrics,
-						artist_id: formdata.artist_id
+						artist_id: formdata.artist_id,
+						created_at:formdata.created_at
 					}
 				])
 				if(error) {

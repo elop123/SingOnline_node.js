@@ -40,7 +40,8 @@ static async createAlbum(formdata) {
         description:formdata.description,
         image:formdata.image,
         release_date:formdata.release_date,
-        artist_id: formdata.artist_id
+        artist_id: formdata.artist_id,
+        created_at:formdata.created_at
       }
     ])
     if(error) {
