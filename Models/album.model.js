@@ -54,6 +54,30 @@ static async createAlbum(formdata) {
     console.error(`Fejl i oprettelse af album: ${error}`)
   }
 }
+static async updateAlbum(formdata){
+  try{
+    let { data, error } = await supabase
+      .from('albums')
+      .update([
+        {
+          title: formdata.title,
+          description: formdata.description,
+          image: formdata.image,
+          release_date:formdata.release_date,
+          artist_id: formdata.artist_id,
+        }
+      ])
+      .eq('id', formdata.id);
+    
+      if(error) {
+        throw new Error(error.message)
+      } else {
+        return data
+      }
 
+     } catch (error) {
+      console.error(`Fejl i opdatering af album: ${error}`)
+    }
+}
 
 }
