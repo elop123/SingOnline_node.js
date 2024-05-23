@@ -64,7 +64,7 @@ static async updateAlbum(formdata){
           description: formdata.description,
           image: formdata.image,
           release_date:formdata.release_date,
-          artist_id: formdata.artist_id,
+          artist_id: formdata.artist_id
         }
       ])
       .eq('id', formdata.id);
