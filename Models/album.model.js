@@ -79,5 +79,11 @@ static async updateAlbum(formdata){
       console.error(`Fejl i opdatering af album: ${error}`)
     }
 }
+static async deleteAlbum(formdata) {
+  let { data, error } = await supabase
+        .from('albums')
+        .delete()
+        .eq('id', formdata.id)
+   }
 
 }

@@ -24,3 +24,9 @@ AlbumController.put('/albums', async (req, res) => {
 	const data = await AlbumModel.updateAlbum(req.body)
     res.send(data)
  });
+
+AlbumController.delete('/albums', async (req, res) => {
+	console.log(req.body);
+	const data = await AlbumModel.deleteAlbum(req.body)
+    res.send(data)
+ });

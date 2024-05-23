@@ -76,11 +76,16 @@ export default class SongModel {
 					}
 		
 				 } catch (error) {
-					console.error(`Fejl i opdatering af sang: ${error}`)
+					console.error(`Fejl i slettelse af sang: ${error}`)
 				}
 		}
 
-		
+		static async deleteRecord(formdata) {
+			let { data, error } = await supabase
+            .from('songs')
+            .delete()
+            .eq('id', formdata.id)
+		   }
 	}
 
 	    
