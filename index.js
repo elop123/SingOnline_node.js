@@ -15,9 +15,11 @@ import {supabase} from './Config/supabase.config.js';
 import SongModel  from './Models/song.model.js';
 import ArtistModel from './Models/artist.model.js';
 import AlbumModel from './Models/album.model.js';
+import ProfileModel from './Models/profile.model.js';
 import {SongController} from './Controllers/song.controller.js'
 import {ArtistController} from './Controllers/artist.controller.js'
 import {AlbumController} from './Controllers/album.controller.js'
+import {ProfileController} from './Controllers/profile.controller.js'
 
 const app = express() 
 dotenv.config()
@@ -120,6 +122,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(SongController)
 app.use(ArtistController)
 app.use(AlbumController)
+app.use(ProfileController)
 
 app.listen(3000, ()=>{
     console.log(`Webserver is running now on http://localhost:${port}`);
