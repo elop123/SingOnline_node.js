@@ -41,7 +41,7 @@ export default class ProfileModel {
 		try {
 			const { data, error } = await supabase
 				.from('profiles')
-				.select('id,created_at,first_name,middle_name,last_name,address,zip_code,city,country,email,telephone,gender,date_of_birth')
+				.select('*')
 			if(error) {
 				throw new Error(error)
 			} else {
@@ -57,7 +57,7 @@ export default class ProfileModel {
             let { data, error } = await supabase
                 .from('profiles')
                 .update([
-                    { id: formdata.id,
+                    { 
                         created_at:formdata.created_at,
                         first_name:formdata.first_name,
                         middle_name:formdata.middle_name,
@@ -69,7 +69,8 @@ export default class ProfileModel {
                         email: formdata.email,
                         telephone: formdata.telephone,
                         gender:formdata.gender,
-                        date_of_birth:formdata.date_of_birth
+                        date_of_birth:formdata.date_of_birth,
+                        user_id:formdata.user_id
                         
                     }
                 ])
